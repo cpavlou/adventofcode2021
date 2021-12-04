@@ -1,0 +1,30 @@
+Values<- read.csv(file = "Test1.csv")
+typeof(Values)
+
+###Test if retrieving works
+print(Values[3,])
+print(Values[10,])
+
+###Check the length of data
+Length_of_Data<-lengths(Values, use.names = FALSE)
+
+###Print the length of data
+print(Length_of_Data)
+
+###Adjust the Length of data
+Adj_Length_of_Data<- Length_of_Data-1
+
+###Print the adjusted length of data
+print(Adj_Length_of_Data)
+
+###Set Counter
+Total_Sum<-0
+
+###For loop
+for (i in 1:Adj_Length_of_Data) {
+  
+  if (Values[i,] < Values[i+1,]) 
+    Total_Sum<-Total_Sum+1
+}
+
+print(Total_Sum)
